@@ -19,25 +19,20 @@ function destructivelyRemoveFirstCat(){
 }
 
 function appendCat(name){
-    const addcats = [...cats];
-    addcats.push(name);
+    const addcats = [...cats, name];
     return addcats;
 }
 
 function prependCat(name){
-    const prepcat = [...cats];
-    prepcat.unshift(name);
+    const prepcat = [name,...cats];
     return prepcat;
 }
 
 function removeLastCat(){
-    const remcat = [...cats];
-    remcat.pop();
-    return remcat;
+    const newArray = cats.slice(0, cats.length - 1);
+    return newArray
 }
 
 function removeFirstCat(){
-    const remfircat = [...cats];
-    remfircat.shift();
-    return remfircat;
+    return [...cats].slice(1, cats.length);
 }
